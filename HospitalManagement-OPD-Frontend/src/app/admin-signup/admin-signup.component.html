@@ -1,0 +1,48 @@
+
+<form (ngSubmit)="submitdata()">
+
+    <div class="form" style="color:black;border:0px;width: 40%;margin: auto auto;">
+    <h1 align="center">Register Here</h1>
+        <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="name" id="nm" [(ngModel)]="a.name" >
+      </div>
+      
+      <div class="form-group">
+        <label for="gender">Gender:</label><br>
+        <input type="radio" name="gender" id="gender" value="Male" [(ngModel)]="a.gender" >Male <br>
+        <input type="radio" name="gender" id="gender" value="Female"[(ngModel)]="a.gender" >Female <br>
+
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="text" class="form-control" name="age" id="ag" [(ngModel)]="a.age" >
+      </div>
+      
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" name="email" id="email" [(ngModel)]="a.email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" name="password" id="pwd" [(ngModel)]="a.password" >
+    </div>
+   
+    <button type="submit" class="btn btn-default">Submit</button>
+   
+</div>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

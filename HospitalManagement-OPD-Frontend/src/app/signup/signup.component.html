@@ -1,0 +1,52 @@
+<form (ngSubmit)="submitdata()">
+
+    <div class="form" style="color:black;border:0px;width: 40%;margin: auto auto;">
+    <h1 align="center">Register Here</h1>
+        <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="name" id="nm" [(ngModel)]="p.name" >
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea class="form-control" id="ad" name="address" [(ngModel)]="p.address" ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label><br>
+        <input type="radio" name="gender" id="gender" value="Male" [(ngModel)]="p.gender" >Male <br>
+        <input type="radio" name="gender" id="gender" value="Female"[(ngModel)]="p.gender" >Female <br>
+
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="text" class="form-control" name="age" id="ag" [(ngModel)]="p.age" >
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact:</label>
+        <input type="text" class="form-control" name="contact" id="cn" [(ngModel)]="p.contact" >
+      </div>
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" name="email" id="email" [(ngModel)]="p.email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" name="password" id="pwd" [(ngModel)]="p.password" >
+    </div>
+   
+    <button type="submit" class="btn btn-default">Submit</button>
+</div>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="text-center" style="color: white;">Prescription Detailes</h1>
+    Your Appointment No:
+    <select class="from-control" name="selapp" [(ngModel)]="selapp" (change)="showpre()">
+        <option>--Select--</option>
+        <option *ngFor="let an of a ">{{an.aid}}</option>
+    </select>
+
+<br>
+<table class="table table-bordere" style="background-color: white;">
+    <thead>
+        <tr>
+            <th>Prescription</th>
+            <th>Medicine</th>
+            <th>Suggesdtion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x od p">
+            <td>{{x.prid}}</td>
+            <td>{{x.medicine}}</td>
+            <td>{{x.suggestion}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
