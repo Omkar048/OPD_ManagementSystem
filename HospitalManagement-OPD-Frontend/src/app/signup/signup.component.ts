@@ -14,13 +14,18 @@ import { CommonModule } from '@angular/common';
 })
 export class SignupComponent {
 
-  submitdata(){
+  submitdata(regForm:any){
+    if(regForm.valid)
+    {
     this.ps.insert(this.p).subscribe((data:Patient)=>{
 
       if(data!=null)
         alert("registration Successful")
       this.router.navigate(["/log"])
     })
+  }
+  else
+  alert("Plese input valid data")
   }
   p:Patient=new Patient()
 constructor(private ps:PatientService,private router:Router)

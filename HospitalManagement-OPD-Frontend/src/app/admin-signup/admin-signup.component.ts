@@ -19,7 +19,9 @@ constructor(private as:AdminService ,private router:Router)
 {
 
 }
-submitdata(){
+submitdata(regForm:any){
+  if(regForm.valid)
+  {
   this.as.insert(this.a).subscribe((data:Admin)=>
   {
     if(data!=null)
@@ -29,7 +31,9 @@ submitdata(){
   }
   )
 }
+else
+alert("Plese Enter valid Data ")
 
-
+}
 
 }

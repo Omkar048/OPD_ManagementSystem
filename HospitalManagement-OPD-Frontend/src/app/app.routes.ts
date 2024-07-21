@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { FacilitiesComponent } from './facilities/facilities.component';
+
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AppointmentComponent } from './appointment/appointment.component';
@@ -11,12 +11,14 @@ import { CsaepaperComponent } from './csaepaper/csaepaper.component';
 import { AddPrescriptionComponent } from './add-prescription/add-prescription.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminSignupComponent } from './admin-signup/admin-signup.component';
+import { AdminViewAppComponent } from './admin-view-app/admin-view-app.component';
+import { RahatopdComponent } from './rahatopd/rahatopd.component';
 
 export const routes: Routes = [
+    {path:"rahat",component:RahatopdComponent},
     {path:"hm",component:HomeComponent},
     {path:"contact",component:ContactsComponent },
-    {path:"faci",component:FacilitiesComponent},
-    {path:"signup",component:SignupComponent},
+     {path:"signup",component:SignupComponent},
     {path:"log",component:LoginComponent},
     {path:"app-st",component:AppointmentStatusComponent},
     {path:"app",component:AppointmentComponent},
@@ -25,6 +27,10 @@ export const routes: Routes = [
     {path:"add-pre",component:AddPrescriptionComponent},
     {path:"alog",component:AdminLoginComponent},
     {path:"asign",component:AdminSignupComponent},
+      {path:"aview-app",component:AdminViewAppComponent},
+    
+    
+
 
 
 

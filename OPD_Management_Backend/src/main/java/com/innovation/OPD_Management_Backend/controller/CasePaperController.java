@@ -43,7 +43,7 @@ public CasePaper update(@PathVariable ("id") long id,@RequestBody CasePaper cp)
 {
 	return cs.update(id,cp);
 }
-
+@GetMapping("/casepaper/{id}")
 public CasePaper search(@PathVariable("id")long id)
 {
 	return cs.serach(id);

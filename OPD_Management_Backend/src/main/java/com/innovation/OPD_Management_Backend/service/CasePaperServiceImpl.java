@@ -43,6 +43,7 @@ public CasePaper update(long cid, CasePaper cp) {
 		cpp.setDt(cp.getDt());
 		cpp.setSugar(cp.getSugar());
 		cpp.setSpo(cp.getSpo());
+		cpp.setAid(cp.getAid());
 		return caseRepo.save(cpp);
 	}
 	return null;

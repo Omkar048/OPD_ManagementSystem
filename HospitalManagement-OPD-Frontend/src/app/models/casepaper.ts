@@ -1,6 +1,6 @@
 export class Casepaper {
     cid:any
- long:any
+ aid:any
   pid:any
  dt:any  
  complain:any 

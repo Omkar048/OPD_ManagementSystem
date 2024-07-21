@@ -27,6 +27,6 @@ serverurl="http://localhost:8080/opd"
   }
   search(id:any):Observable<Appointment>
   {
-    return this.http.get<Appointment>(this.serverurl+"/Appointment"+id)
+    return this.http.get<Appointment>(this.serverurl+"/Appointment/"+id)
   }
 }

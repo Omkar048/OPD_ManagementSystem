@@ -1,39 +1,88 @@
-<form (ngSubmit)="submitdata()">
+<form  #regForm="ngForm"   (ngSubmit)="submitdata(regForm)">
 
     <div class="form" style="color:black;border:0px;width: 40%;margin: auto auto;">
     <h1 align="center">Register Here</h1>
         <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" class="form-control" name="name" id="nm" [(ngModel)]="p.name" >
+        <input type="text" class="form-control" name="name" id="nm" #name="ngModel" ngModel  [(ngModel)]="p.name" required pattern="[a-zA-Z]+" >
+        <div *ngIf="!name.valid" style="color: red;">
+        <div *ngIf="name.errors?.['required']">
+          Name is Requred*
+        </div>
+        <div *ngIf="name.errors?.['pattern']">
+          Name Can Contain Only Alphabet
+        </div>  
+
+        </div>
       </div>
       <div class="form-group">
         <label for="address">Address:</label>
-        <textarea class="form-control" id="ad" name="address" [(ngModel)]="p.address" ></textarea>
+        <textarea class="form-control" id="ad" name="address" #address="ngModel" ngModel [(ngModel)]="p.address" required ></textarea>
+        <div *ngIf="!address.valid" style="color: red;">
+          <div *ngIf="address.errors?.['required']">
+            Address is Requred*
+          </div>  
+  
+          </div>
       </div>
       <div class="form-group">
         <label for="gender">Gender:</label><br>
-        <input type="radio" name="gender" id="gender" value="Male" [(ngModel)]="p.gender" >Male <br>
-        <input type="radio" name="gender" id="gender" value="Female"[(ngModel)]="p.gender" >Female <br>
-
+        <input type="radio" name="gender" id="gender" value="Male" #gender="ngModel" ngModel  [(ngModel)]="p.gender" required >Male <br>
+        <input type="radio" name="gender" id="gender" value="Female" [(ngModel)]="p.gender"  >Female <br>
+        <div *ngIf="!gender.valid" style="color: red;">
+          <div *ngIf="gender.errors?.['required']">
+            gender is Requred*
+          </div>  
+  
+          </div>
       </div>
       <div class="form-group">
         <label for="age">Age:</label>
-        <input type="text" class="form-control" name="age" id="ag" [(ngModel)]="p.age" >
+        <input type="text" class="form-control" name="age" id="ag" #age="ngModel" ngModel [(ngModel)]="p.age" required pattern="[0-9]+">
+        <div *ngIf="!age.valid" style="color: red;">
+          <div *ngIf="age.errors?.['required']">
+            Age is Requred*
+          </div>
+          <div *ngIf="age.errors?.['pattern']">
+            Age Can Contain Only numbers in between 1 to 100
+          </div> 
+          </div> 
       </div>
       <div class="form-group">
-        <label for="contact">Contact:</label>
-        <input type="text" class="form-control" name="contact" id="cn" [(ngModel)]="p.contact" >
+        <label for="contact">Contact NO:</label>
+        <input type="text" class="form-control" name="contact" id="cn" #cn="ngModel" ngModel  [(ngModel)]="p.contact" required pattern="[0-9]{10}" >
+        <div *ngIf="!cn.valid" style="color: red;">
+          <div *ngIf="cn.errors?.['required']">
+           Conatcy Number is Requred*
+          </div>
+          <div *ngIf="cn.errors?.['pattern']">
+            Contact Can Contain 10 Only digits
+          </div>  
+          </div>
+
       </div>
     <div class="form-group">
       <label for="email">Email address:</label>
-      <input type="email" class="form-control" name="email" id="email" [(ngModel)]="p.email">
+      <input type="email" class="form-control" name="email" #email="ngModel" ngModel id="email" [(ngModel)]="p.email" required>
+      <div *ngIf="!email.valid" style="color: red;">
+        <div *ngIf="email.errors?.['required']">
+          Email-ID is Requred*
+        </div>  
+
+        </div>
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" name="password" id="pwd" [(ngModel)]="p.password" >
+      <input type="password" class="form-control" name="password" id="pwd" #password="ngModel" ngModel [(ngModel)]="p.password" required >
+      <div *ngIf="!password.valid" style="color: red;">
+        <div *ngIf="password.errors?.['required']">
+          Password is Requred*
+        </div>  
+
+        </div>
     </div>
    
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-success">Submit</button>
 </div>
   </form>
 

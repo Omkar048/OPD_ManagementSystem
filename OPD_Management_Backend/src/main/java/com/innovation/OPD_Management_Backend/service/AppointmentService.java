@@ -11,5 +11,5 @@ Appointment insert (Appointment ap);
 void delete(long aid);
 Appointment update(long aid,Appointment ap);
 Appointment serach(long aid);
-List<Appointment >getAll();
+List<Appointment>getAll();
 }
